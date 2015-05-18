@@ -152,16 +152,16 @@ $(function(){
 	var addImgMove = function(posX, posY, playerX){
 		
 		// calculete a position on the canvas, deponding on the size of image
-		var posCaseX = (posX*sizeCase)+60;
-		var posCaseY = (posY*sizeCase)+60;
+		var posCaseX = (posX*sizeCase)+80;
+		var posCaseY = (posY*sizeCase)+80;
 
 		// create img, src deponding on player who played
 		var playerImg = document.createElement('img');
 		
 		if (playerX){
-			playerImg.src = 'img/x_big.png';
+			playerImg.src = 'img/x.png';
 		} else {
-			playerImg.src = 'img/o_big.png';
+			playerImg.src = 'img/o.png';
 		}
 		// add an image 
 		context.drawImage(playerImg, posCaseX, posCaseY);
