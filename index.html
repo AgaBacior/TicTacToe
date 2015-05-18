@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gra w kółko i krzyżyk</title>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>  
+    <main>
+      <h1>Gra w kółko i krzyżyk</h1>
+      <section id="registeredForm">
+        <form>
+          <label for ="name1">Imie pierwszego gracza</label>
+          <input type="text" id="name1" name="name1" required>
+          <label for="name2">Imie drugiego gracza</label>
+          <input type="text" id="name2" name="name2" required>
+          <button type="submit">Wyslij</button>
+        </form>
+      </section> 
+
+      <section id="game" class="hidden">
+        <div id="msg"></div>
+        <canvas width="600" height="600">Oh uzywasz starej przegladarki</canvas>
+      </section>
+
+      <section id="boxGameOver" class="hidden">
+        <h2>Brawo!</h2>
+        <div></div>
+        <button id="nextGame" type="button">Kontynuuj</button>
+        <button id="quitGame" type="button">Zakoncz gre</button>
+      
+      </section>
+      <section id="alertBox" class="hidden">
+        <h2>Zajete</h2>
+        <button id="closeBox" type="button">zamknij</button>
+      </section>
+    </main>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/main.js"></script> 
+  </body>
+</html>

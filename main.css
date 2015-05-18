@@ -1,0 +1,150 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {	
+	margin: 0;
+	padding: 0;
+	background: #D7D7D7;
+}
+main {
+	margin: 0 auto;
+	width: 1040px;
+}
+.hidden {
+	display: none;
+}
+.float {
+	float: left;
+}
+h1 {
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 40px;
+	text-transform: none;
+}
+h2 {
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 30px;
+	text-transform: none;
+}
+p {
+	font-size: 20px;
+	text-transform: capitalize;
+}
+#game p:first-child {
+	float: left;
+}
+#game  p:last-child {
+	float: right;
+}
+span {
+	display: inline-block;
+	vertical-align:middle;
+	width: 40px;
+	height: 40px;
+	margin-left: 30px;
+}
+span.oClass{
+	background: url('img/o.png') no-repeat center center;
+}
+span.xClass{
+	background: url('img/x.png') no-repeat center center;
+}
+div:after { 
+   content: "";
+   display: block; 
+   clear: both;
+}
+form {
+	margin: 30% auto; 
+	width: 100%;
+	text-align: center;
+}
+label {
+	margin: 0 10px;	
+	font-size: 12px;
+}
+input, button {
+	height: 40px;
+	border: 0;
+	font-family: 'Helveica', sans-serif;
+	padding: 5px;
+	font-size: 12px;
+}
+input {
+	margin-right: 30px;
+	width: 200px;
+	background-color: #EBEDED;	
+	text-transform: capitalize;
+}
+button {
+	margin: 0 10px;	
+	width: 100px;
+	background-color: #6E7171;	
+	text-transform: uppercase;
+	color: rgb(255,255,255);
+}
+#boxGameOver p {
+	text-align: center;
+}
+#quitGame {
+	float: right;
+}
+canvas {
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto; 
+}
+
+
+.form-horizontal input.colorInput {
+	background-color: #efe3b5;
+	border: 2px #f2df94 solid;
+	box-shadow:  none;
+}
+.form-horizontal span.box {
+	display: block;
+	width: 34px;
+	height: 34px; 
+	float: right;
+}
+.form-horizontal span.inputOk {
+	background: url('img/check.png') no-repeat center center;
+}
+.form-horizontal span.inputError {
+	background: url('img/error.png') no-repeat center center;
+}
+.form-horizontal .form-control {
+	width:90%;
+	margin:0;
+	float:left;
+}
+form.form-horizontal input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px #efe3b5 inset;
+	border: 2px #f2df94 solid;
+}
+#boxGameOver, #alertBox {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	margin-left: -190px;
+	margin-top: -180px;
+	width: 400px;
+	background-color: white;
+	padding: 40px;
+	box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+}
+#alertBox button {
+	display: block;
+    margin: 0 auto;
+}
