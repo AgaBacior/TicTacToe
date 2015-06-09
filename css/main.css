@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'nexa_rust_sansblack';
+    src: url('../fonts/nexarustsans-black-webfont.woff2') format('woff2'),
+         url('../fonts/nexarustsans-black-webfont.woff') format('woff'),
+         url('../fonts/nexarustsans-black-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
 	box-sizing: border-box;
 }
@@ -26,8 +34,8 @@ main {
 }
 h1 {
 	text-align: center;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 40px;
+	font-family: 'nexa_rust_sansblack', 'Arial', sans-serif;
+	font-size: 80px;
 	text-transform: none;
 }
 h2 {

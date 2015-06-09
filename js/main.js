@@ -63,14 +63,14 @@ $(function(){
 
 	var countNbCell = function() {
 		
-		for (var i = 0, l = movePlayer.length; i<l; i++) {
+		for (var i = 0, l1 = movePlayer.length; i<l1; i++) {
 			var movePlayerDim2 = movePlayer[i];
 			
-			for (var j = 0, l = movePlayerDim2.length; j<l; j++) {
+			for (var j = 0, l2 = movePlayerDim2.length; j<l2; j++) {
 				nbCell ++;
 			}
 		}
-	}
+	};
 	//
 	var initialization = function () {
 		
@@ -91,7 +91,7 @@ $(function(){
 
 		context.strokeStyle ='#6E7171';
 		context.stroke();
-	}
+	};
 
 	// 
 	var managePlay = function(e){
@@ -146,7 +146,7 @@ $(function(){
 		} else {
 			$('#alertBox').removeClass('hidden');
 		}
-	}
+	};
 
 	// add an image of 'x' or 'o ' depending on the player 
 	var addImgMove = function(posX, posY, playerX){
@@ -165,7 +165,7 @@ $(function(){
 		}
 		// add an image 
 		context.drawImage(playerImg, posCaseX, posCaseY);
-	}
+	};
 	//
 	var testWinner = function() {
 			
@@ -200,7 +200,7 @@ $(function(){
 		}
 		
 		return false;
-	}
+	};
 	var endMsg = function (winner) {
 		
 		if (winner) {
