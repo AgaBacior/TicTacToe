@@ -6,25 +6,24 @@
     font-weight: normal;
     font-style: normal;
 }
-* {
-	box-sizing: border-box;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 html {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
+	min-height: 100%;
+	min-width: 100%;
+	font-family: 'Source Sans Pro', Arial, sans-serif;
+	box-sizing: border-box;
+	word-wrap: break-word;
 }
 body {	
-	margin: 0;
-	padding: 0;
-	background: #D7D7D7;
+	background: rgb(183, 186, 193); /* (188, 199, 220); */
+	color: rgb(255, 255, 255);
 }
 main {
 	margin: 0 auto;
-	width: 1040px;
+	max-width: 1040px;
+	overflow: auto;
 }
 .hidden {
 	display: none;
@@ -32,21 +31,33 @@ main {
 .float {
 	float: left;
 }
+/** TITLE PAGE */
 h1 {
+	margin: 4rem 0 2rem 0;
 	text-align: center;
 	font-family: 'nexa_rust_sansblack', 'Arial', sans-serif;
-	font-size: 80px;
+	font-size: 5rem;
 	text-transform: none;
+	color: rgb(109,138,206);
 }
+/** MSG BOX */
 h2 {
 	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 30px;
+	font-size: 2rem;
 	text-transform: none;
 }
 p {
-	font-size: 20px;
-	text-transform: capitalize;
+	font-size: 1.5rem;
+}
+
+/**  INFO PLAYER: name + icon; */
+
+/* Name */
+#game p {
+	max-width: 48%;
+	margin: 0 0 1rem 0;
+	text-transform: uppercase;
 }
 #game p:first-child {
 	float: left;
@@ -54,91 +65,87 @@ p {
 #game  p:last-child {
 	float: right;
 }
+/* Icon */
 span {
 	display: inline-block;
-	vertical-align:middle;
+	vertical-align: middle;
 	width: 40px;
 	height: 40px;
 	margin-left: 30px;
 }
 span.oClass{
-	background: url('img/o.png') no-repeat center center;
+	background: url('../img/o.png') no-repeat center center;
 }
 span.xClass{
-	background: url('img/x.png') no-repeat center center;
+	background: url('../img/x.png') no-repeat center center;
 }
-div:after { 
+#game div:after { 
    content: "";
    display: block; 
    clear: both;
 }
+
+/** FORM */
 form {
-	margin: 30% auto; 
+	margin: 20% auto; 
 	width: 100%;
-	text-align: center;
+}
+.col1, .col2, .col3 {
+	width: 30%;	
+	display: inline-block;
+	vertical-align: bottom;
+	margin-top: 4%;
+}
+.col1, .col2 {
+	margin-right: 4%;
 }
 label {
-	margin: 0 10px;	
-	font-size: 12px;
+	display: inline-block;
+	margin: 20px 0;	
+	font-size: 1.2rem;
+	color: rgb(255, 255, 255);
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
 }
 input, button {
-	height: 40px;
+	height: 50px;
+	padding: 10px;
 	border: 0;
-	font-family: 'Helveica', sans-serif;
-	padding: 5px;
-	font-size: 12px;
+	font-family: Helveica, sans-serif;
+	text-transform: capitalize;
+	color: rgb(90,90,90);	
+	font-size: 1.1rem;
 }
 input {
-	margin-right: 30px;
-	width: 200px;
-	background-color: #EBEDED;	
+	width: 100%;
+	background-color: rgb(240,240,240);	
 	text-transform: capitalize;
 }
 button {
-	margin: 0 10px;	
-	width: 100px;
-	background-color: #6E7171;	
+	width: 100%;
+	background-color: rgb(140,140,140);	
+	font-size: 1rem;
 	text-transform: uppercase;
+	letter-spacing: 0.1rem;
 	color: rgb(255,255,255);
+	margin-top: 4%;
 }
-#boxGameOver p {
-	text-align: center;
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px rgb(240,240,240) inset;
 }
-#quitGame {
-	float: right;
-}
+/** CANVAS */
 canvas {
     box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
     display: block;
     margin: 0 auto; 
+    background-color: rgb(232, 232, 232);
 }
 
+/** BOX GAME OVER */
 
-.form-horizontal input.colorInput {
-	background-color: #efe3b5;
-	border: 2px #f2df94 solid;
-	box-shadow:  none;
-}
-.form-horizontal span.box {
-	display: block;
-	width: 34px;
-	height: 34px; 
-	float: right;
-}
-.form-horizontal span.inputOk {
-	background: url('img/check.png') no-repeat center center;
-}
-.form-horizontal span.inputError {
-	background: url('img/error.png') no-repeat center center;
-}
-.form-horizontal .form-control {
-	width:90%;
-	margin:0;
-	float:left;
-}
-form.form-horizontal input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0 1000px #efe3b5 inset;
-	border: 2px #f2df94 solid;
+#quitGame {
+	background-color: rgb(215, 133, 133);
 }
 #boxGameOver, #alertBox {
 	position: absolute;
@@ -151,8 +158,6 @@ form.form-horizontal input:-webkit-autofill {
 	background-color: white;
 	padding: 40px;
 	box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
-}
-#alertBox button {
-	display: block;
-    margin: 0 auto;
+	text-align: center;
+	color: rgb(140,140,140);
 }

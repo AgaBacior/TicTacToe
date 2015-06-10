@@ -3,6 +3,8 @@
   <head>
     <title>Gra w kółko i krzyżyk</title>
     <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>  
@@ -10,11 +12,17 @@
       <h1>Kółko i krzyżyk</h1>
       <section id="registeredForm">
         <form>
-          <label for ="name1">Imie pierwszego gracza</label>
-          <input type="text" id="name1" name="name1" required>
-          <label for="name2">Imie drugiego gracza</label>
-          <input type="text" id="name2" name="name2" required>
-          <button type="submit">Graj!</button>
+          <div class="col1">
+            <label for ="name1">Imie pierwszego gracza</label>
+            <input type="text" id="name1" name="name1" required>
+          </div>
+          <div class="col2">  
+            <label for="name2">Imie drugiego gracza</label>
+            <input type="text" id="name2" name="name2" required>
+          </div>
+          <div class="col3">
+            <button type="submit">Graj</button>
+          </div>
         </form>
       </section> 
 
@@ -24,7 +32,7 @@
       </section>
 
       <section id="boxGameOver" class="hidden">
-        <h2>Brawo!</h2>
+        <h2>Koniec gry</h2>
         <div></div>
         <button id="nextGame" type="button">Kontynuuj</button>
         <button id="quitGame" type="button">Zakoncz gre</button>

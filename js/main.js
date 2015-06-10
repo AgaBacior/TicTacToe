@@ -1,24 +1,52 @@
-// variables global 
-var context;
-var nbCell = 0;
-var sizeCase = 200;
-var name1;
-var name2;
-
-var movePlayer;
-var playerX;
-var playCount;
-
 $(function(){
+	
+	// variables  
+	var context;
+	var nbCell = 0;
+	var sizeCase = 200;
+	var name1;
+	var name2;
+
+	var movePlayer;
+	var playerX;
+	var playCount;
+
+	var nbImageLoaded = 0;
+	var imageX;
+	var imageO;	
 
 	// event lauch when form is submited
 	$('form').on('submit', function(e){
 		e.preventDefault();
+
+		// This is the caalback we will call when the X and O image will be loade		
+		var checkImageLoadShowCanvas = function() {
+			// One image is loaded
+			++nbImageLoaded;
+						
+			if (nbImageLoaded == 2) {
+				// Both image are loaded we can show the canvas	
+				$('#game').removeClass('hidden');
+			}
+		};
+		
+		// We create two image, X and O for drawing on the canvas
+		// When both will be loaded the canvas will be showed
+		
+		imageX = document.createElement('img');
+		imageX.src = 'img/x.png';
+		imageX.onload = checkImageLoadShowCanvas;
+		
+		imageO = document.createElement('img');
+		imageO.src = 'img/o.png';
+		imageO.onload = checkImageLoadShowCanvas;
+		
+		
 		
 		// hidden the form with names
 		// dislay the canvas with the game
 		$('#registeredForm').addClass('hidden');		
-		$('#game').removeClass('hidden');
+		//$('#game').removeClass('hidden');
 		
 		// take each player's name value 
 
@@ -154,18 +182,15 @@ $(function(){
 		// calculete a position on the canvas, deponding on the size of image
 		var posCaseX = (posX*sizeCase)+80;
 		var posCaseY = (posY*sizeCase)+80;
-
-		// create img, src deponding on player who played
-		var playerImg = document.createElement('img');
 		
 		if (playerX){
-			playerImg.src = 'img/x.png';
+			// add an image 
+			context.drawImage(imageX, posCaseX, posCaseY);
 		} else {
-			playerImg.src = 'img/o.png';
+			context.drawImage(imageO, posCaseX, posCaseY);
 		}
-		// add an image 
-		context.drawImage(playerImg, posCaseX, posCaseY);
 	};
+	
 	//
 	var testWinner = function() {
 			
@@ -206,7 +231,7 @@ $(function(){
 		if (winner) {
 			$('#boxGameOver div').html('<p>Wygral'+ (playerX ? ' krzyzyk' : 'o kolko') + '</p>');
 		} else {
-			$('#boxGameOver div').html('<p>Remis' + '</p>');			
+			$('#boxGameOver div').html('<p>Nikt nie wygral' + '</p>');			
 		}
 
 		$('#boxGameOver').removeClass('hidden');
