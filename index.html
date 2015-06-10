@@ -10,14 +10,15 @@
   <body>  
     <main>
       <h1>Kółko i krzyżyk</h1>
+
       <section id="registeredForm">
         <form>
           <div class="col1">
-            <label for ="name1">Imie pierwszego gracza</label>
+            <label for ="name1">Imię pierwszego gracza</label>
             <input type="text" id="name1" name="name1" required>
           </div>
           <div class="col2">  
-            <label for="name2">Imie drugiego gracza</label>
+            <label for="name2">Imię drugiego gracza</label>
             <input type="text" id="name2" name="name2" required>
           </div>
           <div class="col3">
@@ -28,19 +29,19 @@
 
       <section id="game" class="hidden">
         <div id="msg"></div>
-        <canvas width="600" height="600">Oh uzywasz starej przegladarki</canvas>
+        <canvas width="600" height="600">Nic z tego, używasz starej przeglądarki.</canvas>
       </section>
 
       <section id="boxGameOver" class="hidden">
         <h2>Koniec gry</h2>
         <div></div>
         <button id="nextGame" type="button">Kontynuuj</button>
-        <button id="quitGame" type="button">Zakoncz gre</button>
+        <button id="quitGame" type="button">Zakończ grę</button>
       
       </section>
       <section id="alertBox" class="hidden">
-        <h2>Zajete</h2>
-        <button id="closeBox" type="button">zamknij</button>
+        <h2>To pole jest już zajęte</h2>
+        <button id="closeBox" type="button">Zamknij</button>
       </section>
     </main>
     <script src="js/jquery-1.11.2.js"></script>
