@@ -1,2 +1,1 @@
-# EVENTY
-Schemat zadania dotyczącego eventów. 
+# Game Tic Tac Toe
