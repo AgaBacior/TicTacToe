@@ -19,13 +19,13 @@ $(function(){
 	$('form').on('submit', function(e){
 		e.preventDefault();
 
-		// This is the callback we will call when the X and O image will be loade		
+		// This is the callback we will call when the X and O image will be loaded		
 		var checkImageLoadShowCanvas = function() {
 			// One image is loaded
 			++nbImageLoaded;
 						
 			if (nbImageLoaded == 2) {
-				// Both image are loaded we can show the canvas	
+				// Both images are loaded we can show the canvas	
 				$('#game').removeClass('hidden');
 			}
 		};
@@ -42,6 +42,8 @@ $(function(){
 		
 		// Hidden the form with names
 		$('#registeredForm').addClass('hidden');		
+
+		// Add class smallTitle to change a size of the title
 		$('h1').addClass('smallTitle');		
 		
 		// Take each player's name value 
