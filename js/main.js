@@ -42,6 +42,7 @@ $(function(){
 		
 		// Hidden the form with names
 		$('#registeredForm').addClass('hidden');		
+		$('h1').addClass('smallTitle');		
 		
 		// Take each player's name value 
 		setName($('#name1').val(), $('#name2').val());
